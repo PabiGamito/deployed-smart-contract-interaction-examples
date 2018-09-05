@@ -12,7 +12,19 @@
  *   },
  */
 
+var HDWalletProvider = require("truffle-hdwallet-provider");
+var mnemonic = "welcome school sadness home lumber salon uniform sadness gentle young certain chat own phrase split";
+
 module.exports = {
   // See <http://truffleframework.com/docs/advanced/configuration>
   // to customize your Truffle configuration!
+  networks: {
+    ropsten: {
+      provider: function() {
+        return new HDWalletProvider(mnemonic, "https://ropsten.infura.io/v3/7f821dfb679a46bc967c4bb6bf975392")
+      },
+      network_id: "*",
+      gas: 4600000
+    }
+  }
 };
